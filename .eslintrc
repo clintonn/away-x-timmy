@@ -1,4 +1,10 @@
 {
   "extends": "airbnb",
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "rules": {
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-filename-extension": 0,
+    "no-tabs": 0,
+    "jsx-quotes": ["warn", "prefer-single"]
+  }
 }
