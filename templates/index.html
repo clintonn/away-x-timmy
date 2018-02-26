@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+  <meta property="og:url" content="http://away.timothyshivers.com" />
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content="T!MMY ╳ Away" />
+  <meta property="og:description" content="A collaboration for those who know what they're willing to do to get away." />
+  <meta property="og:image" content="/assets/fb-og.jpg"
+  />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@timothyshivers">
+  <meta name="twitter:creator" content="@timothyshivers">
+  <meta name="twitter:title" content="T!MMY ╳ Away">
+  <meta name="twitter:description" content="A collaboration for those who know what they're willing to do to get away.">
+  <meta name="twitter:image" content="/assets/fb-og.jpg">
+
+  <meta name="robots" content="index,follow">
+  <meta name="subject" content="Landing page for T!MMY ╳ Away, a self-initiated collaboration created by Timothy Shivers">
+  <link rel="me" href="https://www.instagram.com/tshivs" type="text/html">
+  <link rel="me" href="mailto:tshivers@bu.edu">
+  <link rel="me" href="sms:+17605085156">
+
+  <title>
+    T!MMY ╳ Away
+  </title>
+  <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
+    <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
+    <% } %>
+      <% for (var chunk of webpack.chunks) { %>
+        <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
+          <% for (var file of chunk.files) { %>
+            <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js|css)$/)) { %>
+              <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+              <% } else if (file.match(/manifest\.json$/)) { %>
+                <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
+                <% } %>
+                  <% } %>
+                    <% } %>
+</head>
+
+<body>
+  <%= htmlWebpackPlugin.options.ssr({
+			url: '/'
+		}) %>
+    <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
+    <script>window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
+</body>
+
+</html>

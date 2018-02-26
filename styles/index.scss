@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'mixins';
+
+h1, h2, h3, h4, h5 {
+  font-family: $header-font;
+}
+
+p {
+  font-family: $base-font;
+  line-height: 1.6em;
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+.Main {
+  @include flex();
+}
