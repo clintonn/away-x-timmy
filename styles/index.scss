@@ -12,8 +12,26 @@ p {
 
 body {
   background-color: #F9F9F9;
+  margin: 0;
 }
 
 .Main {
   @include flex();
+}
+
+.Header {
+  width: 100%;
+  text-align: center;
+  background-color: #CCC;
+  height: 100vh;
+  max-height: 55em;
+
+  @include mobile {
+    max-height: 50vh;
+  }
+}
+
+.TimmyLogo {
+  display: block;
+  margin-top: 1em;
 }
