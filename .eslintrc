@@ -6,7 +6,12 @@
     "react/jsx-filename-extension": 0,
     "no-tabs": 0,
     "jsx-quotes": ["warn", "prefer-single"],
-    "import/extensions": ["2", "never", { "css": "always", "scss": "always" }],
-    "indent": ["2", "tabs"]
+    "import/extensions": [2, "never", { "css": "always", "scss": "always" }],
+    "indent": [2, "tab"],
+    "react/jsx-indent": [2, "tab"],
+    "max-len": [1, { "ignoreStrings": true, "ignoreTemplateLiterals": true }]
+  },
+  "env": {
+    "browser": true
   }
 }
