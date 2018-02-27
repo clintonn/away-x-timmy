@@ -3,6 +3,7 @@ import './styles/index.scss';
 import Logo from './components/Logo';
 import Splash from './components/Splash';
 import PageOne from './components/PageOne';
+import PageTwo from './components/PageTwo';
 
 export default class App extends Component {
 	constructor() {
@@ -45,6 +46,7 @@ export default class App extends Component {
 				<Logo show={this.state.showLogo} blue={this.state.past100vh} />
 				<Splash showLogo={this.showLogo} hideLogo={this.hideLogo} />
 				<PageOne />
+				<PageTwo />
 			</div>
 		);
 	}

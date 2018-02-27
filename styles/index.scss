@@ -116,15 +116,22 @@ body {
 	@include flex();
 	width: 100%;
 	padding: 1.5rem 1rem;
-	padding-bottom: 2.4rem;
 	position: relative;
 	background-color: #EDECE8;
+	box-shadow: 0 0 30px rgba(0,0,0,0.2);
+	@include between {
+		padding: 2.3rem 0 3rem 0;
+	}
+	@include tablet {
+		padding: 4rem 0 5rem 0;
+	}
 }
 
 
 .PageOne__copy {
 	@include flex();
 	flex: 0 0 100%;
+	color: #0f283a;
 	position: absolute;
 	z-index: 10;
 	top: 4rem;
@@ -158,6 +165,10 @@ body {
 
 .PageOne__banner_container {
 	@include frame-box(#b5af97, #b5af97, 1em, 1em);
+	@include between {
+		margin-left: 1em;
+		margin-top: 1em;
+	}
 }
 
 .PageOne__banner {
@@ -172,6 +183,50 @@ body {
 	@include desktop {
 		margin: 0 auto;
 	}
+}
+
+.PageTwo {
+	width: 100%;
+	padding: 2em;
+	background: url('/assets/photos/4C6A2834@2x.jpg') center/cover;
+	box-shadow: $card-shadow;
+}
+
+.PageTwo__copy {
+	color: #655c69;
+	@include mobile {
+		width: 100%;
+	}
+	@include tablet {
+		width: 50%;
+	}
+
+	@include desktop {
+		width: 40%;
+		padding: 4em 2em 8em 4em;
+	}
+}
+
+.PageTwo__essay {
+	@include frame-box(#655c69, transparent, 1em, -1em);
+	display: block;
+	background: #655c69;
+	color: #edece9;
+	padding: 1.7em;
+	text-align: right;
+	padding-top: 2em;
+	max-width: 25em;
+	margin-left: auto;
+	@include between {
+		text-align: left;
+		margin-right: auto;
+		margin-left: 0;
+	}
+}
+
+.PageTwo__heading {
+	border-bottom: 3px solid;
+	padding-bottom: 0.3em;
 }
 
 .Heading {
