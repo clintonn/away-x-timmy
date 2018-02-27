@@ -6,6 +6,7 @@ import PageOne from './components/PageOne';
 import PageTwo from './components/PageTwo';
 import PageThree from './components/PageThree';
 import PageFour from './components/PageFour';
+import PageFive from './components/PageFive';
 
 export default class App extends Component {
 	constructor() {
@@ -51,6 +52,7 @@ export default class App extends Component {
 				<PageTwo />
 				<PageThree />
 				<PageFour />
+				<PageFive />
 			</div>
 		);
 	}
