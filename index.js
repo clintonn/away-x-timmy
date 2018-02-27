@@ -4,6 +4,7 @@ import Logo from './components/Logo';
 import Splash from './components/Splash';
 import PageOne from './components/PageOne';
 import PageTwo from './components/PageTwo';
+import PageThree from './components/PageThree';
 
 export default class App extends Component {
 	constructor() {
@@ -47,6 +48,7 @@ export default class App extends Component {
 				<Splash showLogo={this.showLogo} hideLogo={this.hideLogo} />
 				<PageOne />
 				<PageTwo />
+				<PageThree />
 			</div>
 		);
 	}
