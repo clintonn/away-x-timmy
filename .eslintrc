@@ -9,7 +9,8 @@
     "import/extensions": [2, "never", { "css": "always", "scss": "always" }],
     "indent": [2, "tab"],
     "react/jsx-indent": [2, "tab"],
-    "max-len": [1, { "ignoreStrings": true, "ignoreTemplateLiterals": true }]
+		"max-len": [1, { "ignoreStrings": true, "ignoreTemplateLiterals": true }],
+		"react/jsx-indent-props": [2, "tab"]
   },
   "env": {
     "browser": true
