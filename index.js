@@ -1,11 +1,13 @@
 import { Component } from 'preact';
 import './styles/index.scss';
 import Logo from './components/Logo';
+import Splash from './components/Splash';
 
 export default class App extends Component {
 	constructor() {
 		super();
 		this.state = {
+			showLogo: true,
 		};
 	}
 
@@ -14,12 +16,19 @@ export default class App extends Component {
 		});
 	}
 
+	showLogo = () => {
+		this.setState({ ...this.state, showLogo: true });
+	}
+
+	hideLogo = () => {
+		this.setState({ ...this.state, showLogo: false });
+	}
+
 	render() {
 		return (
 			<div className='Main'>
-			<Logo />
-				<h1>Hello, World!</h1>
-				<p>Lectus tincidunt nam urna etiam eros commodo dictum, lacus sociosqu duis rutrum porttitor pellentesque, lobortis ridiculus accumsan felis conubia sodales. Tortor scelerisque aliquet lectus etiam platea, varius dignissim mi gravida taciti massa, hac nisl integer maecenas.</p>
+				<Logo show={this.state.showLogo} />
+				<Splash showLogo={this.showLogo} hideLogo={this.hideLogo} />
 			</div>
 		);
 	}
