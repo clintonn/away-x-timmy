@@ -3,3 +3,19 @@
 $base-font: 'Rubik', 'Futura', Helvetica, sans-serif;
 $header-font: 'Reckless', 'Georgia', serif;
 $header-size: 3em;
+$full-height: 100vh;
+
+// colors
+
+$light-purple: #8F8395;
+$purple: saturate(darken($light-purple, 30%), 25%);
+
+$light-teal: #6C8691;
+$teal: saturate(darken($light-teal, 30%), 25%);
+
+$slate: #2D4B5B;
+
+$millennial-pink: #EFD1C4;
+$dark-millennial-pink: #5F3E49;
+
+$background-white: #F9F9F9;

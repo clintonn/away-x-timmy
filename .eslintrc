@@ -5,6 +5,16 @@
     "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": 0,
     "no-tabs": 0,
-    "jsx-quotes": ["warn", "prefer-single"]
+    "jsx-quotes": ["warn", "prefer-single"],
+    "import/extensions": [2, "never", { "css": "always", "scss": "always" }],
+    "indent": [2, "tab"],
+    "react/jsx-indent": [2, "tab"],
+		"max-len": [1, { "ignoreStrings": true, "ignoreTemplateLiterals": true }],
+		"react/jsx-indent-props": [2, "tab"],
+		"jsx-a11y/media-has-caption": 0,
+		"react/prop-types": 0
+  },
+  "env": {
+    "browser": true
   }
 }
