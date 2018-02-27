@@ -17,6 +17,12 @@
   }
 }
 
+@mixin between {
+	@media screen and (min-width: 420px) and (max-width: 720px) {
+		@content;
+	}
+}
+
 @mixin tablet {
   @media screen and (min-width: 720px) {
     @content;
@@ -33,4 +39,23 @@
   @media screen and (min-width: 1440px) {
     @content;
   }
+}
+
+@mixin frame-box($color: #000, $background: #000, $offset-y: 1em, $offset-x: 1em) {
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+	div {
+		&::before {
+			content: '';
+			background: $background;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			border: 3px solid $color;
+			top: $offset-y;
+			left: $offset-x;
+			z-index: -1;
+		}
+	}
 }
