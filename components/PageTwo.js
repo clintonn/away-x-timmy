@@ -12,6 +12,7 @@ const PageTwo = () => {
 						<p>For the ones who can’t help but glitter.</p>
 						<p>For the ones who know what they want.</p>
 						<p>This is a collaboration for those who know the difference between yes and YES!</p>
+						<p>This is a collaboration for you.</p>
 					</div>
 				</div>
 			</div>
