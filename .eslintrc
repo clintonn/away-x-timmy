@@ -10,7 +10,9 @@
     "indent": [2, "tab"],
     "react/jsx-indent": [2, "tab"],
 		"max-len": [1, { "ignoreStrings": true, "ignoreTemplateLiterals": true }],
-		"react/jsx-indent-props": [2, "tab"]
+		"react/jsx-indent-props": [2, "tab"],
+		"jsx-a11y/media-has-caption": 0,
+		"react/prop-types": 0
   },
   "env": {
     "browser": true
