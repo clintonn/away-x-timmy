@@ -61,6 +61,7 @@ body {
 	width: 100%;
 	background: #E9D2C4;
 	padding: 7em 0 6em 0;
+	box-shadow: $card-shadow;
 }
 
 .PageThree__slider_container {
@@ -198,6 +199,9 @@ body {
 	position: relative;
 	background-color: #EDECE8;
 	box-shadow: 0 0 30px rgba(0,0,0,0.2);
+	@include mobile {
+		padding: 2em 1em 4em 1em;
+	}
 	@include between {
 		padding: 2.3rem 0 3rem 0;
 	}
@@ -297,6 +301,10 @@ body {
 	padding-top: 2em;
 	max-width: 25em;
 	margin-left: auto;
+	@include mobile {
+		margin-top: 3em;
+		margin-bottom: 5em;
+	}
 	@include between {
 		text-align: left;
 		margin-right: auto;
@@ -307,6 +315,147 @@ body {
 .PageTwo__heading {
 	border-bottom: 3px solid;
 	padding-bottom: 0.3em;
+}
+
+.PageFour {
+	width: 100%;
+	padding: 6em 1em;
+
+}
+
+.PageFour__heading {
+	color: #0f283a;
+	position: absolute;
+	z-index: 3;
+}
+
+.PageFour__heading--blue {
+	color: #6C8691;
+	padding-bottom: .2em;
+	border-bottom: 10px solid #6C8691;
+}
+
+.PageFour__heading--left {
+	transition: all 0.3s ease-in-out;
+	@include mobile {
+		top: 0.3em;
+		left: 1em;	
+	}
+	@include between {
+		top: 2.3em;
+    left: 55%;
+	}
+	@include tablet {
+		top: 0.6em;
+    left: 1.6em;
+	}
+	@include desktop {
+		top: 3.7em;
+    left: 10em;
+	}
+}
+
+.PageFour__heading--purple {
+	color: #8F8395;
+	padding-bottom: .3em;
+	border-bottom: 10px solid #8F8395;
+	  display: inline-block;
+  line-height: 0.85;
+}
+
+.BeDaring {
+	position: relative;
+}
+
+.BeDazzle {
+	position: relative;
+	transition: all .5s ease-in-out;
+	@include mobile {
+		top: 7em;
+	}
+
+	@include tablet {
+		margin-top: -5em;
+	}
+
+	@include hd {
+		margin-top: -48em;
+		margin-right: 3em;
+	}
+}
+
+.PageFour__banner {
+	@include frame-box(#8F8395, #8F8395, 1em, 1em);
+	div {
+		&::after {
+			content: '';
+			background: #706477;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			border: 3px solid #706477;
+			top: 2em;
+			left: 2em;
+			z-index: -2;
+		}
+	}
+	@include tablet {
+		margin-left: 3em;
+	}
+}
+
+.PageFour__banner--right {
+	@include frame-box(rgb(78, 104, 119), white, -1em, -1em);
+	div {
+		&::after {
+			content: '';
+			background: white;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			border: 3px solid rgb(105, 128, 141);
+			top: -2em;
+			left: -2em;
+			z-index: -2;
+		}
+	}
+	float: right;
+}
+
+.PageFour__heading--right {
+	transition: all 0.3s ease-in-out;
+	top: 2em;
+	right: 5.8em;
+	@include mobile {
+		top: 1em;
+		right: 1em;
+	}
+}
+
+.PageFour__photo--right {
+	background: white;
+	padding: 1em;
+	border: 3px solid #2D4B5B;
+}
+// .PageFour__banner {
+// 	@include frame-box(#71858F, #71858F, 1em, 1em);
+// 	div {
+// 		&::after {
+// 			content: '';
+// 			background: #2D4B5B;
+// 			position: absolute;
+// 			height: 100%;
+// 			width: 100%;
+// 			border: 3px solid #71858F;
+// 			top: 2em;
+// 			left: 2em;
+// 			z-index: -2;
+// 		}
+// 	}
+// }
+
+.PageFour__banner--left {
+	border: 18px solid #b19bb5;
 }
 
 .Heading {

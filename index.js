@@ -5,6 +5,7 @@ import Splash from './components/Splash';
 import PageOne from './components/PageOne';
 import PageTwo from './components/PageTwo';
 import PageThree from './components/PageThree';
+import PageFour from './components/PageFour';
 
 export default class App extends Component {
 	constructor() {
@@ -49,6 +50,7 @@ export default class App extends Component {
 				<PageOne />
 				<PageTwo />
 				<PageThree />
+				<PageFour />
 			</div>
 		);
 	}
