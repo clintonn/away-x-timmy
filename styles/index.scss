@@ -1,6 +1,21 @@
 @import 'variables';
 @import 'mixins';
 
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+
+body {
+	font-family: $base-font;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: $header-font;
 }
@@ -23,9 +38,12 @@ body {
   width: 100%;
 	text-align: center;
 	position: fixed;
-	z-index: 2;
+	z-index: 25;
 	opacity: 1;
 	transition: opacity .5s ease-in-out;
+	@include mobile {
+		position: absolute;
+	}
 }
 
 .Header--hide {
@@ -40,13 +58,12 @@ body {
 .Splash {
 	width: 100%;
 	position: relative;
-
+	height: 100vh;
   @include mobile {
 		height: 85vh;
 	}
 	@include desktop {
-		height: 100vh;
-		max-height: 55em;
+		overflow: hidden;
 	}
 }
 
@@ -56,6 +73,13 @@ body {
 	object-fit: cover;
 	transition: filter .3s ease-in-out;
 	@include mobile {
+		height: 100%;
+	}
+	@include tablet {
+		height: 100%;
+	}
+
+	@include between {
 		height: 100%;
 	}
 }
@@ -86,4 +110,83 @@ body {
 		top: 90%;
 		left: 48%;
 	}
+}
+
+.PageOne {
+	@include flex();
+	width: 100%;
+	padding: 1.5rem 1rem;
+	padding-bottom: 2.4rem;
+	position: relative;
+	background-color: #EDECE8;
+}
+
+
+.PageOne__copy {
+	@include flex();
+	flex: 0 0 100%;
+	position: absolute;
+	z-index: 10;
+	top: 4rem;
+	width: 100%;
+	@include mobile {
+		padding: 0 3.8em;
+	}
+	@include between {
+		padding: 0 7.1em;
+	}
+	@include desktop {
+		top: 6.5rem;
+	}
+}
+
+.PageOne__smallcaps {
+	flex: 0 0 100%;
+	text-align: center;
+	font-family: $header-font;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.PageOne__wrapper {
+	position: relative;
+	width: 100%;
+	@include desktop {
+		text-align: center;
+	}
+}
+
+.PageOne__banner_container {
+	@include frame-box(#b5af97, #b5af97, 1em, 1em);
+}
+
+.PageOne__banner {
+	@include tablet {
+		border: 2px solid #b5af97;
+	}
+
+	@include between {
+		width: 100%;
+	}
+
+	@include desktop {
+		margin: 0 auto;
+	}
+}
+
+.Heading {
+	font-size: 4rem;
+	margin: 1rem auto;
+	line-height: 1.1;
+	@include mobile {
+		font-size: 3rem;
+	}
+	@include between {
+		font-size: 3.2rem;
+	}
+}
+
+.fullwidth {
+	flex: 0 0 100%;
+	text-align: center;
 }
