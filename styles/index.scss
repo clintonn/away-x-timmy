@@ -24,26 +24,66 @@ body {
 	text-align: center;
 	position: fixed;
 	z-index: 2;
+	opacity: 1;
+	transition: opacity .5s ease-in-out;
+}
+
+.Header--hide {
+	opacity: 0;
 }
 
 .TimmyLogo {
   display: block;
-  margin-top: 1em;
+	margin-top: 1em;
+}
+
+.Splash {
+	width: 100%;
+	position: relative;
+
+  @include mobile {
+		height: 85vh;
+	}
+	@include desktop {
+		height: 100vh;
+		max-height: 55em;
+	}
 }
 
 .SplashVideo {
 	width: 100%;
-  height: 100vh;
-	max-height: 55em;
-	filter: brightness(0.5);
-
-  @include mobile {
-    max-height: 50vh;
+	max-height: 100vh;
+	object-fit: cover;
+	transition: filter .3s ease-in-out;
+	@include mobile {
+		height: 100%;
 	}
-	
-	video {
-		width: 100%;
-		max-height: 100vh;
-		object-fit: cover;
+}
+
+.SplashVideo--muted {
+	filter: brightness(0.5);
+}
+
+.SplashVideo__control {
+	position: absolute;
+	color: white;
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity .3s ease-in-out;
+}
+
+.SplashVideo__control--faded {
+	opacity: 0.1;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.SplashVideo__control--center {
+	top: 95%;
+	left: 50%;
+	@include mobile {
+		top: 90%;
+		left: 48%;
 	}
 }

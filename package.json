@@ -30,6 +30,7 @@
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
+    "fscreen": "^1.0.2",
     "normalize.css": "^8.0.0",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
