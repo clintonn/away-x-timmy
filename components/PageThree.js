@@ -2,15 +2,20 @@ import Slider from 'react-slick';
 import { Component } from 'preact';
 
 export default class PageThree extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		const testimonials = [{ text: '“I wish I could take The Timmy with me everywhere I go! It makes me a better person. Five stars. Must buy.”', author: 'Tyler Riewer' }, { text: '“If it was possible to have more than one, I’d take two of The Timmy’s everywhere I go.”', author: 'Cubby Graham' }, { text: '“Now that The Timmy is in my life, I drip with opulence. I can’t get all this glitter out of my eye.”', author: 'Ryan Dutch' }, { text: '“The Timmy is the best thing that\’s happened to me since giving birth.”', author: 'Natalie Ebel' }];
+
+		if (window.innerWidth <= 720) {
+			const natalie = testimonials.pop();
+			testimonials.unshift(natalie);
+		}
 		this.state = {
 			currentSlide: 0,
-		}
-
-		this.testimonials = [
-			{ text: '“I wish I could take The Timmy with me everywhere I go! It makes me a better person. Five stars. Must buy.”', author: 'Tyler Riewer' }, { text: '“If it was possible to have more than one, I’d take two of The Timmy’s everywhere I go.”', author: 'Cubby Graham' }, { text: '“Now that The Timmy is in my life, I drip with opulence. I can’t get all this glitter out of my eye.”', author: 'Ryan Dutch' }, { text: '“The Timmy is the best thing that\’s happened to me since giving birth.”', author: 'Natalie Ebel' }
-		];
+			mobile: window.innerWidth < 720,
+			testimonials,
+		};
+		this.checkMobile = this.checkMobile.bind(this);
 	}
 
 	componentDidMount() {
@@ -25,9 +30,28 @@ export default class PageThree extends Component {
 		el2.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css';
 		document.head.appendChild(el1);
 		document.head.appendChild(el2);
+		this.onresize = window.addEventListener('resize', this.checkMobile);
 	}
 
-	setNewTestimonial = (index) => { this.setState({ ...this.state, currentSlide: index })
+	componentWillUnmount() {
+		window.removeEventListener(this.onresize);
+	}
+
+	setNewTestimonial = (index) => { this.setState({ ...this.state, currentSlide: index });}
+
+	checkMobile() {
+		const { mobile, testimonials } = this.state;
+		if (mobile && window.innerWidth > 720) {
+			// no longer mobile
+			const natalie = testimonials.shift();
+			testimonials.push(natalie);
+			this.setState({ ...this.state, mobile: false, testimonials });
+		} else if (!mobile && window.innerWidth <= 720) {
+			// is now mobile, pop and unshift
+			const natalie = testimonials.pop();
+			testimonials.unshift(natalie);
+			this.setState({ ...this.state, mobile: true, testimonials });
+		}
 	}
 
 	render() {
@@ -42,6 +66,8 @@ export default class PageThree extends Component {
 			responsive: [{ breakpoint: 720, settings: { slidesToShow: 1 } }, { breakpoint: 768, settings: { slidesToShow: 3 } }],
 			afterChange: this.setNewTestimonial,
 		};
+
+		const { testimonials, currentSlide } = this.state;
 
 		return (
 			<div className="PageThree">
@@ -62,7 +88,7 @@ export default class PageThree extends Component {
 					</Slider>
 				</div>
 				<div className='PageThree__testimonial'>
-					{ this.testimonials[this.state.currentSlide].text }<p>— { this.testimonials[this.state.currentSlide].author }</p>
+					{ testimonials[currentSlide].text }<p>— { testimonials[currentSlide].author }</p>
 				</div>
 			</div>
 		);
