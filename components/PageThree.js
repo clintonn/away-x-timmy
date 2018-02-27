@@ -1,6 +1,5 @@
 import Slider from 'react-slick';
 import { Component } from 'preact';
-import { NextButton, PrevButton } from './SlickButtons';
 
 export default class PageThree extends Component {
 	constructor() {
@@ -32,7 +31,7 @@ export default class PageThree extends Component {
 	}
 
 	render() {
-		var settings = {
+		const settings = {
 			dots: true,
 			infinite: true,
 			speed: 400,
@@ -40,27 +39,27 @@ export default class PageThree extends Component {
 			slidesToScroll: 1,
 			draggable: false,
 			easing: 'ease-in-out',
-			responsive: [{breakpoint: 720, settings: {slidesToShow: 1}}, { breakpoint: 768, settings: {slidesToShow: 3}}],
+			responsive: [{ breakpoint: 720, settings: { slidesToShow: 1 } }, { breakpoint: 768, settings: { slidesToShow: 3 } }],
 			afterChange: this.setNewTestimonial,
 		};
 
 		return (
 			<div className="PageThree">
 				<div className='PageThree__slider_container'>
-				<Slider {...settings}>
-					<div>
-						<div className='Testimonial_photo_wrapper'><img src="/assets/photos/Testimonial-Natalie.jpg" /></div>
-					</div>
-					<div>
+					<Slider {...settings}>
+						<div>
+							<div className='Testimonial_photo_wrapper'><img src="/assets/photos/Testimonial-Natalie.jpg" /></div>
+						</div>
+						<div>
 							<div className='Testimonial_photo_wrapper'><img src="/assets/photos/Testimonial-Tyler.jpg" /></div>
-					</div>
-					<div>
+						</div>
+						<div>
 							<div className='Testimonial_photo_wrapper'><img src="/assets/photos/Testimonial-Cubby.jpg" /></div>
-					</div>
-					<div>
-						<div className='Testimonial_photo_wrapper'><img src="/assets/photos/Testimonial-Ryan.jpg" /></div>
-					</div>
-				</Slider>
+						</div>
+						<div>
+							<div className='Testimonial_photo_wrapper'><img src="/assets/photos/Testimonial-Ryan.jpg" /></div>
+						</div>
+					</Slider>
 				</div>
 				<div className='PageThree__testimonial'>
 					{ this.testimonials[this.state.currentSlide].text }<p>— { this.testimonials[this.state.currentSlide].author }</p>
