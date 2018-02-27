@@ -16,6 +16,12 @@ html {
 
 body {
 	font-family: $base-font;
+	color: #0f283a;
+}
+
+a {
+	text-decoration: none;
+	color: #0f283a;
 }
 
 h1, h2, h3, h4, h5 {
@@ -459,10 +465,103 @@ body {
 	border: 18px solid #b19bb5;
 }
 
+.PageFive {
+	width: 100%;
+	background: #E3EAEE;
+	padding: 3em 2em;
+	margin-top: 3em;
+}
+
+.PageFive__heading {
+	text-align: right;
+}
+
+.PageFive__banner {
+	@include frame-box(rgb(78, 104, 119), transparent, -1em, 1em);
+	div {
+		&::before {
+			border: 3px solid;
+			border-image: linear-gradient(#516573, rgba(229, 234, 238,0.1)) 30;
+		}
+		// &::after {
+		// 	content: '';
+		// 	background: transparent;
+		// 	position: absolute;
+		// 	height: 100%;
+		// 	width: 100%;
+		// 	border: 3px solid;
+		// 	border-image: linear-gradient(#516573, #E5EAEE) 30;
+		// 	top: -2em;
+		// 	left: -1em;
+		// 	z-index: -2;
+		// }
+	}
+}
+
+.PageFive__photo {
+	border: 3px solid;
+	border-image: linear-gradient(#E5EAEE, #516573) 30;
+}
+
+.PageFiveCTA {
+	text-align: right;
+}
+
+.PageFiveCTA__button {
+	background: #516573;
+	padding: 1em 2.5em;
+	font-family: $base-font;
+	font-size: 1.1em;
+	border-radius: 2em;
+	cursor: pointer;
+	a {
+		color: white;
+	}
+}
+
+.PageFive__contacts {
+	@include mobile {
+		float: none;
+		margin-top: 2em;
+		text-align: center;
+	}
+	@include desktop {
+		float: right;
+		margin-top: 10em;
+	}
+}
+
+.Timmy {
+	@include mobile {
+		display: block;
+		clear: both;
+		padding: 3em 1em;
+	}
+	@include between {
+		margin-top: 3em;
+	}
+
+	@include desktop {
+		display: inline-block;
+		float: left;
+	}
+}
+
+.PageFive__disclaimer {
+	float: right;
+	clear: left;
+	@include mobile {
+		float: none;
+		clear: both;
+		text-align: center;
+	}
+}
+
 .Heading {
 	font-size: 4rem;
 	margin: 1rem auto;
 	line-height: 1.1;
+	color: #0f283a;
 	@include mobile {
 		font-size: 3rem;
 	}
